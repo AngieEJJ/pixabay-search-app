@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:why_two_screen/domain/use_case/get_photos_use_case.dart';
-import 'package:why_two_screen/presentation/view_model/final_screen_state.dart';
+import 'package:why_two_screen/presentation/view_model/image_search_screen_state.dart';
 import '../../domain/model/photo.dart';
 
-class FinalScreenViewModel with ChangeNotifier {
+class ImageSearchScreenViewModel with ChangeNotifier {
   final GetPhotosUseCase getPhotosUseCase;
 
-  FinalScreenViewModel(this.getPhotosUseCase);
+  ImageSearchScreenViewModel(this.getPhotosUseCase);
 
-  FinalScreenState _state = FinalScreenState([], false);
+  ImageSearchScreenState _state = ImageSearchScreenState([], false);
 
-  FinalScreenState get state => _state;
+  ImageSearchScreenState get state => _state;
 
   Future<void> loadIcon(String query) async {
     _state = state.copyWith(isLoading: true);

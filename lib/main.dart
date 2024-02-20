@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:why_two_screen/data/di/image_di.dart';
-import 'package:why_two_screen/presentation/page/main_screen.dart';
+import 'package:why_two_screen/presentation/view/page/image_search_screen.dart';
+import 'package:why_two_screen/presentation/view_model/image_search_screen_viewmodel.dart';
 
 void main() {
   diSetup();
@@ -19,7 +21,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MainScreen(),
+      home: ChangeNotifierProvider(
+        create: (_) => getIt<ImageSearchScreenViewModel>(),
+        child: const ImageSearchScreen(),
+      ),
     );
   }
 }

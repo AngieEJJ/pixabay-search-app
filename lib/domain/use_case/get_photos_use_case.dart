@@ -10,6 +10,6 @@ class GetPhotosUseCase {
 
   Future<List<Photo>> execute(String query) async {
     final result = await repository.getData(query);
-    return result.sublist(0, min(3, result.length));
+    return result.sublist(0, min(20, result.length));
   }
 }
