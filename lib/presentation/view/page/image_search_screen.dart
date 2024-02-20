@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:why_two_screen/presentation/view/page/detail_image_screen.dart';
 import 'package:why_two_screen/presentation/view/widget/search_bar_widget.dart';
 import 'package:why_two_screen/presentation/view_model/image_search_screen_viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -39,9 +40,24 @@ class _ImageSearchScreenState extends State<ImageSearchScreen> {
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10,
                     ),
-                    itemBuilder: (context, index) => Image.network(
-                        state.items[index].previewURL,
-                        fit: BoxFit.cover),
+                    itemBuilder: (context, index) => GestureDetector(
+                      onDoubleTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailImageScreen(
+                                itemImage: state.items[index].previewURL,
+                                tag: 'imageTag_$index'
+                              ),
+                            ),
+                        );
+                      },
+                      child: Hero(
+                        tag: 'imageTag_$index',
+                        child: Image.network(state.items[index].previewURL,
+                            fit: BoxFit.cover),
+                      ),
+                    ),
                   ),
                 ),
         ]),
