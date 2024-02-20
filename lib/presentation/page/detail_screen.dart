@@ -6,9 +6,6 @@ import 'package:why_two_screen/data/repository/photo_api_repository_impl.dart';
 import 'package:why_two_screen/domain/use_case/get_photos_use_case.dart';
 import 'package:why_two_screen/presentation/view_model/final_screen_viewmodel.dart';
 import 'final_screen.dart';
-import 'image_print_screen.dart';
-import 'list_screen.dart';
-import 'print_screen.dart';
 
 class DetailScreen extends StatefulWidget {
   final Color color;
@@ -31,30 +28,6 @@ class _DetailScreenState extends State<DetailScreen> {
             style: TextStyle(color: widget.color),
           ),
           actions: [
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ListScreen()));
-                },
-                child: const Text('list')),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const PrintScreen()));
-                },
-                child: const Text('print')),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ImagePrintScreen()));
-                },
-                child: const Text('image')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(

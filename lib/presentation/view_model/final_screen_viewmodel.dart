@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:why_two_screen/domain/use_case/get_photos_use_case.dart';
 import 'package:why_two_screen/presentation/view_model/final_screen_state.dart';
-
 import '../../domain/model/photo.dart';
 
 class FinalScreenViewModel with ChangeNotifier {
