@@ -54,8 +54,11 @@ class _ImageSearchScreenState extends State<ImageSearchScreen> {
                       },
                       child: Hero(
                         tag: 'imageTag_$index',
-                        child: Image.network(state.items[index].previewURL,
-                            fit: BoxFit.cover),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(13.0),
+                          child: Image.network(state.items[index].previewURL,
+                              fit: BoxFit.cover),
+                        ),
                       ),
                     ),
                   ),
