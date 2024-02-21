@@ -25,4 +25,14 @@ class ImageSearchScreenViewModel with ChangeNotifier {
     _state = state.copyWith(isLoading: false);
     notifyListeners();
   }
+
+
+  final liked = <int>{};
+
+  void checkList(int id) {
+    liked.contains(id)
+        ? liked.remove(id)
+        : liked.add(id);
+    notifyListeners();
+  }
 }
