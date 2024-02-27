@@ -2,6 +2,8 @@
 
 Pixabay(이미지 검색 사이트) API를 활용한 이미지 검색 앱
 
+![pixasearch](https://github.com/AngieEJJ/pixabay-search-app/assets/49228543/703dd440-75b4-44e5-ada3-7f0d51e3ed0c)
+
 
 <br>
 
